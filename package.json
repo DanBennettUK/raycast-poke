@@ -1,0 +1,34 @@
+{
+  "name": "raycast-poke",
+  "title": "Poke",
+  "description": "Raycast extension for sending messages to Poke",
+  "icon": "icon.svg",
+  "author": "Dan Bennett",
+  "license": "MIT",
+  "private": true,
+  "categories": ["Communication"],
+  "commands": [
+    {
+      "name": "send-message",
+      "title": "Send Message to Poke",
+      "description": "Send a message to Poke"
+    },
+    {
+      "name": "check-replies",
+      "title": "Check Poke Replies",
+      "description": "Poll for replies from Poke"
+    }
+  ],
+  "scripts": {
+    "dev": "raycast dev",
+    "build": "raycast build"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.93.0",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "typescript": "^5.8.3"
+  }
+}
