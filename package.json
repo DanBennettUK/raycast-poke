@@ -6,17 +6,21 @@
   "author": "Dan Bennett",
   "license": "MIT",
   "private": true,
-  "categories": ["Communication"],
+  "categories": [
+    "Communication"
+  ],
   "commands": [
     {
       "name": "send-message",
       "title": "Send Message to Poke",
-      "description": "Send a message to Poke"
+      "description": "Send a message to Poke",
+      "mode": "view"
     },
     {
       "name": "check-replies",
       "title": "Check Poke Replies",
-      "description": "Poll for replies from Poke"
+      "description": "Poll for replies from Poke",
+      "mode": "no-view"
     }
   ],
   "scripts": {
