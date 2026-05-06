@@ -2,10 +2,21 @@ Raycast Poke
 
 A minimal Raycast extension for sending messages to Poke from Raycast.
 
+Installation
+1. Clone the repo:
+   git clone https://github.com/DanBennettUK/raycast-poke.git
+2. Enter the project directory:
+   cd raycast-poke
+3. Install dependencies:
+   npm install
+4. Start the extension locally in Raycast:
+   raycast dev
+
 Setup
-- Add your Poke v2 API key in Raycast preferences.
-- Keep the default base URL unless your deployment differs.
-- The send command uses the documented inbound endpoint.
+- Open the extension preferences in Raycast.
+- Add your Poke API key to the apiKey preference.
+- Leave the default base URL unless your Poke deployment uses something else.
+- The send command uses the documented inbound endpoint by default.
 
 Included commands
 - Send Message: posts a message to Poke's inbound message endpoint.
