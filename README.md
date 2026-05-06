@@ -1,24 +1,31 @@
 Raycast Poke
 
-A minimal Raycast extension for sending a message to Poke from Raycast.
+A minimal Raycast extension for sending messages to Poke from Raycast.
 
 Setup
-- Add your Poke API key in Raycast preferences.
-- Set the Poke base URL and endpoint paths if your deployment differs from the defaults.
+- Add your Poke v2 API key in Raycast preferences.
+- Keep the default base URL unless your deployment differs.
+- The send command uses the documented inbound endpoint.
 
 Included commands
 - Send Message: posts a message to Poke's inbound message endpoint.
 - Check Replies: polls a configurable replies endpoint and displays any returned messages.
 
+Documented inbound endpoint
+- POST https://poke.com/api/v1/inbound/api-message
+- Authorization: Bearer YOUR_V2_API_KEY
+- Content-Type: application/json
+- Body: { "message": "..." }
+
 Replies / proactive replies
-- I could not verify a documented push-based reply API from the available tools here.
-- Best path is polling a read endpoint that returns replies for a conversation/thread.
-- The scaffold includes a configurable polling command so the read side can be wired up later without changing the command UX.
-- If Poke later exposes webhooks, server-sent events, or a subscription API, that would be the better path for proactive replies because it avoids polling.
+- I did not find a documented push/webhook/SSE API for replies in the available workspace data.
+- Best path is a polling read endpoint if Poke exposes one for conversations or threads.
+- The scaffold includes a polling command and keeps the replies path configurable so a documented read endpoint can be wired in without changing the command shape.
+- If Poke later exposes webhooks or a streaming API, that would be the better approach for proactive replies because it would avoid polling.
 
 Preferences
 - apiKey: Poke API key
 - baseUrl: Poke base URL
-- inboundPath: inbound message path
-- repliesPath: replies polling path
+- inboundPath: inbound message path, defaults to /api/v1/inbound/api-message
+- repliesPath: replies polling path, if/when a read endpoint is available
 - defaultConversationId: optional conversation/thread id used by the replies command

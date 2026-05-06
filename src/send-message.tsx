@@ -10,7 +10,7 @@ export default function Command() {
   const preferences = getPreferenceValues<PokePreferences>();
   const apiKey = preferences.apiKey?.trim();
   const baseUrl = preferences.baseUrl?.trim() || "https://poke.com";
-  const inboundPath = preferences.inboundPath?.trim() || "/api/inbound-messages";
+  const inboundPath = preferences.inboundPath?.trim() || "/api/v1/inbound/api-message";
 
   async function handleSubmit(values: Values) {
     if (!apiKey) {
