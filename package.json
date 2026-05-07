@@ -2,7 +2,7 @@
   "name": "raycast-poke",
   "title": "Poke",
   "description": "Raycast extension for sending messages to Poke",
-  "icon": "assets/extension-icon.png",
+  "icon": "icon.svg",
   "author": "Dan Bennett",
   "license": "MIT",
   "private": true,
@@ -24,8 +24,8 @@
     }
   ],
   "scripts": {
-    "dev": "ray dev",
-    "build": "ray build"
+    "dev": "raycast dev",
+    "build": "raycast build"
   },
   "dependencies": {
     "@raycast/api": "^1.93.0",
