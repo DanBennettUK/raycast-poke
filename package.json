@@ -24,8 +24,8 @@
     }
   ],
   "scripts": {
-    "dev": "raycast dev",
-    "build": "raycast build"
+    "dev": "ray dev",
+    "build": "ray build"
   },
   "dependencies": {
     "@raycast/api": "^1.93.0",
