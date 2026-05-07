@@ -2,7 +2,7 @@
   "name": "raycast-poke",
   "title": "Poke",
   "description": "Raycast extension for sending messages to Poke",
-  "icon": "icon.svg",
+  "icon": "assets/extension-icon.png",
   "author": "Dan Bennett",
   "license": "MIT",
   "private": true,
@@ -24,8 +24,8 @@
     }
   ],
   "scripts": {
-    "dev": "raycast dev",
-    "build": "raycast build"
+    "dev": "ray dev",
+    "build": "ray build"
   },
   "dependencies": {
     "@raycast/api": "^1.93.0",
@@ -34,5 +34,44 @@
   "devDependencies": {
     "@types/node": "^22.15.18",
     "typescript": "^5.8.3"
-  }
+  },
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "Poke API Key",
+      "description": "Your Poke API key used for authenticated requests.",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "baseUrl",
+      "title": "Base URL",
+      "description": "The base URL for your Poke deployment.",
+      "type": "textfield",
+      "required": true,
+      "default": "https://poke.com"
+    },
+    {
+      "name": "inboundPath",
+      "title": "Inbound Path",
+      "description": "Path for sending messages to Poke.",
+      "type": "textfield",
+      "required": true,
+      "default": "/api/v1/inbound/api-message"
+    },
+    {
+      "name": "repliesPath",
+      "title": "Replies Path",
+      "description": "Optional path for polling replies from Poke.",
+      "type": "textfield",
+      "required": false
+    },
+    {
+      "name": "defaultConversationId",
+      "title": "Default Conversation ID",
+      "description": "Optional default conversation or thread ID for polling replies.",
+      "type": "textfield",
+      "required": false
+    }
+  ]
 }
